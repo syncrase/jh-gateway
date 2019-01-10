@@ -1,0 +1,95 @@
+{
+    "name": "Plante",
+    "fields": [
+        {
+            "fieldName": "floraison",
+            "fieldType": "Mois",
+            "fieldValues": "JANVIER,FEVRIER,MARS,AVRIL,MAI,JUIN,JUILLET,AOUT,SEPTEMBRE,OCTOBRE,NOVEMBRE,DECEMBRE"
+        },
+        {
+            "fieldName": "recolte",
+            "fieldType": "Mois",
+            "fieldValues": "JANVIER,FEVRIER,MARS,AVRIL,MAI,JUIN,JUILLET,AOUT,SEPTEMBRE,OCTOBRE,NOVEMBRE,DECEMBRE"
+        },
+        {
+            "fieldName": "strate",
+            "fieldType": "Strate",
+            "fieldValues": "HYPOGEE,MUSCINALE,HERBACEE,ARBUSTIVE,ARBOREE"
+        },
+        {
+            "fieldName": "croissance",
+            "fieldType": "VitesseCroissance",
+            "fieldValues": "TRES_LENTE,LENTE,NORMALE,RAPIDE,TRES_RAPIDE"
+        },
+        {
+            "fieldName": "ensoleillement",
+            "fieldType": "Ensoleillement",
+            "fieldValues": "SOLEIL,MI_OMBRE,OMBRE"
+        },
+        {
+            "fieldName": "phMin",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^\\d{0,1}(,\\d){0,1}$"
+        },
+        {
+            "fieldName": "phMax",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^\\d{0,1}(,\\d){0,1}$"
+        },
+        {
+            "fieldName": "richesseSol",
+            "fieldType": "RichesseSol",
+            "fieldValues": "TRES_PAUVRE,PAUVRE,NORMALE,RICHE,TRES_RICHE"
+        },
+        {
+            "fieldName": "typeTerre",
+            "fieldType": "TypeTerre",
+            "fieldValues": "ARGILEUSE,CALCAIRE,HUMIFERE,SABLEUSE"
+        },
+        {
+            "fieldName": "tempMin",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tempMax",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "typeFeuillage",
+            "fieldType": "TypeFeuillage",
+            "fieldValues": "PERSISTANT,SEMI_PERSISTANT,MARCESCENT,CADUC"
+        },
+        {
+            "fieldName": "typeRacine",
+            "fieldType": "TypeRacine",
+            "fieldValues": "PIVOTANTE,FASCICULAIRE,ADVENTICE,TRACANTE,CONTREFORT,CRAMPON,ECHASSE,AERIENNE,LIANE,VENTOUSE,PNEUMATOPHORE"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "classificationCronquist",
+            "otherEntityName": "classificationCronquist",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "plante"
+        }
+    ],
+    "changelogDate": "20190110103945",
+    "javadoc": "@author Pierre TAQUET",
+    "entityTableName": "plante",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

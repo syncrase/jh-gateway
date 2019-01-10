@@ -5,6 +5,16 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103945_added_entity_Plante.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103946_added_entity_ClassificationCronquist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103947_added_entity_Ordre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103948_added_entity_Famille.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103949_added_entity_Genre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103950_added_entity_Espece.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103951_added_entity_InteractionPlantePlante.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190110103945_added_entity_constraints_Plante.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103946_added_entity_constraints_ClassificationCronquist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190110103951_added_entity_constraints_InteractionPlantePlante.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

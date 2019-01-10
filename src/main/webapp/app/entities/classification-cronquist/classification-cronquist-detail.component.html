@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="classificationCronquist">
+            <h2><span>Classification Cronquist</span> {{classificationCronquist.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Ordre</span></dt>
+                <dd>
+                    <div *ngIf="classificationCronquist.ordre">
+                        <a [routerLink]="['/ordre', classificationCronquist.ordre?.id, 'view']">{{classificationCronquist.ordre?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span>Famille</span></dt>
+                <dd>
+                    <div *ngIf="classificationCronquist.famille">
+                        <a [routerLink]="['/famille', classificationCronquist.famille?.id, 'view']">{{classificationCronquist.famille?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span>Genre</span></dt>
+                <dd>
+                    <div *ngIf="classificationCronquist.genre">
+                        <a [routerLink]="['/genre', classificationCronquist.genre?.id, 'view']">{{classificationCronquist.genre?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span>Espece</span></dt>
+                <dd>
+                    <div *ngIf="classificationCronquist.espece">
+                        <a [routerLink]="['/espece', classificationCronquist.espece?.id, 'view']">{{classificationCronquist.espece?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/classification-cronquist', classificationCronquist.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

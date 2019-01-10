@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-interaction-plante-plante-heading">Create or edit a Interaction Plante Plante</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!interactionPlantePlante.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="interactionPlantePlante.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_notation">Notation</label>
+                    <input type="text" class="form-control" name="notation" id="field_notation"
+                        [(ngModel)]="interactionPlantePlante.notation" pattern="^(-|0|\+){1}$"/>
+                    <div [hidden]="!(editForm.controls.notation?.dirty && editForm.controls.notation?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.notation?.errors?.pattern">
+                            This field should follow pattern for "Notation".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="interactionPlantePlante.description" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dePlante">De Plante</label>
+                    <select class="form-control" id="field_dePlante" name="dePlante" [(ngModel)]="interactionPlantePlante.dePlante"  required>
+                        <option *ngIf="!editForm.value.dePlante" [ngValue]="null" selected></option>
+                        <option [ngValue]="planteOption.id === interactionPlantePlante.dePlante?.id ? interactionPlantePlante.dePlante : planteOption" *ngFor="let planteOption of plantes; trackBy: trackPlanteById">{{planteOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.dePlante?.dirty && editForm.controls.dePlante?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.dePlante?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_versPlante">Vers Plante</label>
+                    <select class="form-control" id="field_versPlante" name="versPlante" [(ngModel)]="interactionPlantePlante.versPlante"  required>
+                        <option *ngIf="!editForm.value.versPlante" [ngValue]="null" selected></option>
+                        <option [ngValue]="planteOption.id === interactionPlantePlante.versPlante?.id ? interactionPlantePlante.versPlante : planteOption" *ngFor="let planteOption of plantes; trackBy: trackPlanteById">{{planteOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.versPlante?.dirty && editForm.controls.versPlante?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.versPlante?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

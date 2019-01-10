@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="plante">
+            <h2><span>Plante</span> {{plante.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Floraison</span></dt>
+                <dd>
+                    <span>{{plante.floraison}}</span>
+                </dd>
+                <dt><span>Recolte</span></dt>
+                <dd>
+                    <span>{{plante.recolte}}</span>
+                </dd>
+                <dt><span>Strate</span></dt>
+                <dd>
+                    <span>{{plante.strate}}</span>
+                </dd>
+                <dt><span>Croissance</span></dt>
+                <dd>
+                    <span>{{plante.croissance}}</span>
+                </dd>
+                <dt><span>Ensoleillement</span></dt>
+                <dd>
+                    <span>{{plante.ensoleillement}}</span>
+                </dd>
+                <dt><span>Ph Min</span></dt>
+                <dd>
+                    <span>{{plante.phMin}}</span>
+                </dd>
+                <dt><span>Ph Max</span></dt>
+                <dd>
+                    <span>{{plante.phMax}}</span>
+                </dd>
+                <dt><span>Richesse Sol</span></dt>
+                <dd>
+                    <span>{{plante.richesseSol}}</span>
+                </dd>
+                <dt><span>Type Terre</span></dt>
+                <dd>
+                    <span>{{plante.typeTerre}}</span>
+                </dd>
+                <dt><span>Temp Min</span></dt>
+                <dd>
+                    <span>{{plante.tempMin}}</span>
+                </dd>
+                <dt><span>Temp Max</span></dt>
+                <dd>
+                    <span>{{plante.tempMax}}</span>
+                </dd>
+                <dt><span>Type Feuillage</span></dt>
+                <dd>
+                    <span>{{plante.typeFeuillage}}</span>
+                </dd>
+                <dt><span>Type Racine</span></dt>
+                <dd>
+                    <span>{{plante.typeRacine}}</span>
+                </dd>
+                <dt><span>Classification Cronquist</span></dt>
+                <dd>
+                    <div *ngIf="plante.classificationCronquist">
+                        <a [routerLink]="['/classification-cronquist', plante.classificationCronquist?.id, 'view']">{{plante.classificationCronquist?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plante', plante.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

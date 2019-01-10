@@ -1,0 +1,20 @@
+{
+    "name": "Espece",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190110103950",
+    "javadoc": "Espece entity.\n@author Pierre TAQUET",
+    "entityTableName": "espece",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

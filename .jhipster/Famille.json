@@ -1,0 +1,20 @@
+{
+    "name": "Famille",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190110103948",
+    "javadoc": "Famille entity.\n@author Pierre TAQUET",
+    "entityTableName": "famille",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

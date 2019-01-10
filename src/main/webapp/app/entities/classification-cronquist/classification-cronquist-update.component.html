@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-classification-cronquist-heading">Create or edit a Classification Cronquist</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!classificationCronquist.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="classificationCronquist.id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ordre">Ordre</label>
+                    <select class="form-control" id="field_ordre" name="ordre" [(ngModel)]="classificationCronquist.ordre" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ordreOption.id === classificationCronquist.ordre?.id ? classificationCronquist.ordre : ordreOption" *ngFor="let ordreOption of ordres; trackBy: trackOrdreById">{{ordreOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_famille">Famille</label>
+                    <select class="form-control" id="field_famille" name="famille" [(ngModel)]="classificationCronquist.famille" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="familleOption.id === classificationCronquist.famille?.id ? classificationCronquist.famille : familleOption" *ngFor="let familleOption of familles; trackBy: trackFamilleById">{{familleOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_genre">Genre</label>
+                    <select class="form-control" id="field_genre" name="genre" [(ngModel)]="classificationCronquist.genre" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="genreOption.id === classificationCronquist.genre?.id ? classificationCronquist.genre : genreOption" *ngFor="let genreOption of genres; trackBy: trackGenreById">{{genreOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_espece">Espece</label>
+                    <select class="form-control" id="field_espece" name="espece" [(ngModel)]="classificationCronquist.espece"  required>
+                        <option *ngIf="!editForm.value.espece" [ngValue]="null" selected></option>
+                        <option [ngValue]="especeOption.id === classificationCronquist.espece?.id ? classificationCronquist.espece : especeOption" *ngFor="let especeOption of especes; trackBy: trackEspeceById">{{especeOption.name}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.espece?.dirty && editForm.controls.espece?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.espece?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

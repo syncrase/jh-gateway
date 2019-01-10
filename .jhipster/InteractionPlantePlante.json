@@ -1,0 +1,43 @@
+{
+    "name": "InteractionPlantePlante",
+    "fields": [
+        {
+            "fieldName": "notation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^(-|0|\\+){1}$"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "dePlante",
+            "otherEntityName": "plante",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "versPlante",
+            "otherEntityName": "plante",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190110103951",
+    "javadoc": "InteractionPlantePlante entity.\n@author Pierre TAQUET",
+    "entityTableName": "interaction_plante_plante",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

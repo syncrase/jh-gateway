@@ -1,0 +1,175 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-plante-heading">Create or edit a Plante</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!plante.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="plante.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_floraison">Floraison</label>
+                    <select class="form-control" name="floraison" [(ngModel)]="plante.floraison" id="field_floraison" >
+                        <option value="JANVIER">JANVIER</option>
+                        <option value="FEVRIER">FEVRIER</option>
+                        <option value="MARS">MARS</option>
+                        <option value="AVRIL">AVRIL</option>
+                        <option value="MAI">MAI</option>
+                        <option value="JUIN">JUIN</option>
+                        <option value="JUILLET">JUILLET</option>
+                        <option value="AOUT">AOUT</option>
+                        <option value="SEPTEMBRE">SEPTEMBRE</option>
+                        <option value="OCTOBRE">OCTOBRE</option>
+                        <option value="NOVEMBRE">NOVEMBRE</option>
+                        <option value="DECEMBRE">DECEMBRE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_recolte">Recolte</label>
+                    <select class="form-control" name="recolte" [(ngModel)]="plante.recolte" id="field_recolte" >
+                        <option value="JANVIER">JANVIER</option>
+                        <option value="FEVRIER">FEVRIER</option>
+                        <option value="MARS">MARS</option>
+                        <option value="AVRIL">AVRIL</option>
+                        <option value="MAI">MAI</option>
+                        <option value="JUIN">JUIN</option>
+                        <option value="JUILLET">JUILLET</option>
+                        <option value="AOUT">AOUT</option>
+                        <option value="SEPTEMBRE">SEPTEMBRE</option>
+                        <option value="OCTOBRE">OCTOBRE</option>
+                        <option value="NOVEMBRE">NOVEMBRE</option>
+                        <option value="DECEMBRE">DECEMBRE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_strate">Strate</label>
+                    <select class="form-control" name="strate" [(ngModel)]="plante.strate" id="field_strate" >
+                        <option value="HYPOGEE">HYPOGEE</option>
+                        <option value="MUSCINALE">MUSCINALE</option>
+                        <option value="HERBACEE">HERBACEE</option>
+                        <option value="ARBUSTIVE">ARBUSTIVE</option>
+                        <option value="ARBOREE">ARBOREE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_croissance">Croissance</label>
+                    <select class="form-control" name="croissance" [(ngModel)]="plante.croissance" id="field_croissance" >
+                        <option value="TRES_LENTE">TRES_LENTE</option>
+                        <option value="LENTE">LENTE</option>
+                        <option value="NORMALE">NORMALE</option>
+                        <option value="RAPIDE">RAPIDE</option>
+                        <option value="TRES_RAPIDE">TRES_RAPIDE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ensoleillement">Ensoleillement</label>
+                    <select class="form-control" name="ensoleillement" [(ngModel)]="plante.ensoleillement" id="field_ensoleillement" >
+                        <option value="SOLEIL">SOLEIL</option>
+                        <option value="MI_OMBRE">MI_OMBRE</option>
+                        <option value="OMBRE">OMBRE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phMin">Ph Min</label>
+                    <input type="text" class="form-control" name="phMin" id="field_phMin"
+                        [(ngModel)]="plante.phMin" pattern="^\d{0,1}(,\d){0,1}$"/>
+                    <div [hidden]="!(editForm.controls.phMin?.dirty && editForm.controls.phMin?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.phMin?.errors?.pattern">
+                            This field should follow pattern for "Ph Min".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_phMax">Ph Max</label>
+                    <input type="text" class="form-control" name="phMax" id="field_phMax"
+                        [(ngModel)]="plante.phMax" pattern="^\d{0,1}(,\d){0,1}$"/>
+                    <div [hidden]="!(editForm.controls.phMax?.dirty && editForm.controls.phMax?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.phMax?.errors?.pattern">
+                            This field should follow pattern for "Ph Max".
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_richesseSol">Richesse Sol</label>
+                    <select class="form-control" name="richesseSol" [(ngModel)]="plante.richesseSol" id="field_richesseSol" >
+                        <option value="TRES_PAUVRE">TRES_PAUVRE</option>
+                        <option value="PAUVRE">PAUVRE</option>
+                        <option value="NORMALE">NORMALE</option>
+                        <option value="RICHE">RICHE</option>
+                        <option value="TRES_RICHE">TRES_RICHE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeTerre">Type Terre</label>
+                    <select class="form-control" name="typeTerre" [(ngModel)]="plante.typeTerre" id="field_typeTerre" >
+                        <option value="ARGILEUSE">ARGILEUSE</option>
+                        <option value="CALCAIRE">CALCAIRE</option>
+                        <option value="HUMIFERE">HUMIFERE</option>
+                        <option value="SABLEUSE">SABLEUSE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tempMin">Temp Min</label>
+                    <input type="number" class="form-control" name="tempMin" id="field_tempMin"
+                        [(ngModel)]="plante.tempMin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_tempMax">Temp Max</label>
+                    <input type="number" class="form-control" name="tempMax" id="field_tempMax"
+                        [(ngModel)]="plante.tempMax" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeFeuillage">Type Feuillage</label>
+                    <select class="form-control" name="typeFeuillage" [(ngModel)]="plante.typeFeuillage" id="field_typeFeuillage" >
+                        <option value="PERSISTANT">PERSISTANT</option>
+                        <option value="SEMI_PERSISTANT">SEMI_PERSISTANT</option>
+                        <option value="MARCESCENT">MARCESCENT</option>
+                        <option value="CADUC">CADUC</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_typeRacine">Type Racine</label>
+                    <select class="form-control" name="typeRacine" [(ngModel)]="plante.typeRacine" id="field_typeRacine" >
+                        <option value="PIVOTANTE">PIVOTANTE</option>
+                        <option value="FASCICULAIRE">FASCICULAIRE</option>
+                        <option value="ADVENTICE">ADVENTICE</option>
+                        <option value="TRACANTE">TRACANTE</option>
+                        <option value="CONTREFORT">CONTREFORT</option>
+                        <option value="CRAMPON">CRAMPON</option>
+                        <option value="ECHASSE">ECHASSE</option>
+                        <option value="AERIENNE">AERIENNE</option>
+                        <option value="LIANE">LIANE</option>
+                        <option value="VENTOUSE">VENTOUSE</option>
+                        <option value="PNEUMATOPHORE">PNEUMATOPHORE</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_classificationCronquist">Classification Cronquist</label>
+                    <select class="form-control" id="field_classificationCronquist" name="classificationCronquist" [(ngModel)]="plante.classificationCronquist" required>
+                        <option *ngIf="!editForm.value.classificationCronquist" [ngValue]="null" selected></option>
+                        <option [ngValue]="classificationCronquistOption.id === plante.classificationCronquist?.id ? plante.classificationCronquist : classificationCronquistOption" *ngFor="let classificationCronquistOption of classificationcronquists; trackBy: trackClassificationCronquistById">{{classificationCronquistOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.classificationCronquist?.dirty && editForm.controls.classificationCronquist?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.classificationCronquist?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

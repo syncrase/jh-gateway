@@ -1,0 +1,41 @@
+{
+    "name": "ClassificationCronquist",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ordre",
+            "otherEntityName": "ordre",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "famille",
+            "otherEntityName": "famille",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "genre",
+            "otherEntityName": "genre",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "espece",
+            "otherEntityName": "espece",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20190110103946",
+    "javadoc": "@author Pierre TAQUET",
+    "entityTableName": "classification_cronquist",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
