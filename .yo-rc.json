@@ -1,0 +1,33 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.olympp.frontend"
+        },
+        "jhipsterVersion": "5.7.2",
+        "applicationType": "gateway",
+        "baseName": "gateway",
+        "packageName": "com.olympp.frontend",
+        "packageFolder": "com/olympp/frontend",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "hazelcast",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "Zjc5YWI0Mzk0ZjQ3OTZiZWUxNjEzZDEwNGVkYzU1ZDE0YWIwN2MzM2E5MDM5NjdmNTk1OWY4NzRjMGNmN2NkYjI5MjM3NmZlMzBiYTI0ZmFmYmIxNTNlZjZiMzg1MzQ0ZDAzM2M2NTk0Yjg2MGMxZDYzOTkwNzk0NGQ4NDkwMjE=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}
